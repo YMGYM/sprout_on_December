@@ -301,15 +301,15 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("시작하기") action Start()
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            textbutton _("히스토리") action ShowMenu("history")
 
             textbutton _("저장하기") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        textbutton _("이어하기") action ShowMenu("load")
 
         textbutton _("환경 설정") action ShowMenu("preferences")
 
@@ -1507,8 +1507,3 @@ style slider_pref_vbox:
 style slider_pref_slider:
     variant "small"
     xsize 600
-
-
-
-
-
