@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 660: end of line expected.
+    show bus2_day with ahyun normal
+                             ^
+
+Ren'Py Version: Ren'Py 6.99.14.1.3218
+Thu Aug 30 21:29:57 2018
