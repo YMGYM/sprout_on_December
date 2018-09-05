@@ -15,7 +15,7 @@ image ahyun soso = "ahyun/soso.png"
 
 
 # 배경 설정
-image black = "#000"
+image bg black = "#000"
 image bg school_day = "school_day.jpeg"
 image bg school_night = "school_night.jpeg"
 image bg bus1_day = "bus1_day.jpeg"
@@ -28,7 +28,7 @@ image bg road_day = "road_day.jpeg"
 
 # 음악 설정
 define audio.hello = "music/hello.mp3"
-define audio.finally = "music/finally.mp3"
+define audio.final = "music/finally.mp3"
 define audio.happy = "music/happy.mp3"
 define audio.smile = "music/smile.mp3"
 define audio.thanks = "music/thanks.mp3"
@@ -37,7 +37,7 @@ define audio.thanks = "music/thanks.mp3"
 label start:
 
 # 검은 바탕
-    show black
+    show bg black
     "감독관" "수험생 여러분들은 답안지를 덮고 손을 머리 위로 올려주십시오."
 
     "감독관의 말과 함께 수능이 끝났다."
@@ -48,12 +48,17 @@ label start:
 
     "일종의 부록, 에필로그에 불과한 셈이다."
 
+
 # -프롤로그- "끝은 새로운 시작"
 
 label scene1:
 
 # 어두운 하늘과 교문
-    show school_night with None
+    "{size=+10}프롤로그{/size}"
+
+    "{size=+10}- 끝은 새로운 시작 -{/size}"
+
+    scene school_night
     "밖은 어느새 완전히 해가 졌다."
 
     "도시의 조명만이 아래서 하늘을 밝힐 뿐이다."
@@ -87,7 +92,8 @@ label scene1:
     "'수고했다.'"
 
 # 검은 바탕(?)
-    show black
+
+    scene black
     "나는 사람들 틈을 지나 밖으로 나갔다."
 
     "멀어져가는 시험장을 보며 정말로 끝이라는 것이 실감났다."
@@ -115,7 +121,12 @@ label scene1:
 # 1화 - 먼저 건넨
 
 # 북적거리는 정류장 정면
-    show bus1_night with None
+
+    "{size=+10}1장{/size}"
+
+    "{size=+10}- 먼저 건넨 -{/size}"
+
+    scene bus1_night
     # bus1 부분을 학교로 설정하겠습니다.
     play music smile loop
 
@@ -158,8 +169,8 @@ label scene1:
     "옆에 앉은 여자애였다."
 
 # 대각선 구도(내가 앞, 소녀는 뒤)
-    # 고개숙인 소녀 수정필요
-    show ahyun dere
+    ############ 고개숙인 소녀 수정필요##############
+    show ahyun crying
 
     "들키고 싶지 않았는지, 붉은 목도리에 얼굴을 파묻고 있다."
 
@@ -208,7 +219,7 @@ label paper:
     g "감사합니다."
 
     "그러나 눈물을 닦던 그녀는, 오늘 하루의 고단함 때문인지, 다시 목도리에 얼굴을 묻었다."
-    show ahyun dere
+    show ahyun crying
 
     jump scene1end
 
@@ -245,7 +256,8 @@ label talk:
 
     g "네......."
 
-    show ahyun dere
+    ################고개묻은 아현 ###########################
+    show ahyun crying
 
     "그녀는 다시 목도리에 고개를 묻었다."
 
@@ -278,7 +290,6 @@ label scene1end:
     show ahyun soso
 
     g "너도 수능 보고 나온 거지?"
-
 
     "그녀가 슬픔 가득한 얼굴로 이쪽을 빤히 바라보고 있었다."
 
@@ -400,9 +411,16 @@ label scene1end:
 
     "다시 만날 수 있을까?"
 
+    scene black
 label scene2:
-    show bus2_day with None
+
+    "{size=+10}2장{/size}"
+
+    "{size=+10}- 아침 버스에서 -{/size}"
+
+    scene bus2_day
     play music happy loop
+
     "아침의 버스는 모순적이다."
 
     "거기에는 노곤함과 분주함이 공존한다."
@@ -444,7 +462,6 @@ label scene2:
     "그리고 이어 카드 주인의 당혹스런 목소리가 들렸다."
 
 # 그림자 형태의 모습 등장
-
     g "어?"
 
     "그 짧은 당황함에서 나는 익숙함을 찾았다."
@@ -482,7 +499,7 @@ label scene2:
 
     "나, 소녀" ".......!"
 
-    show ahyun smile
+    show ahyun fun
 
     "그렇게 마주한 시선에, 우리는 결국 웃음이 터지고 말았다."
 
@@ -551,7 +568,7 @@ label scene2:
 
     "아현은 잠시 골똘히 생각하더니 무언가 생각난 듯 아, 하고 짧게 외쳤다."
 
-    show ahyun smile
+    show ahyun fun
 
     "그리고는 터지는 웃음을 막지 못했다."
 
@@ -635,13 +652,18 @@ label scene2:
     gn "난 여기서 내릴게. 내일 보자!"
 
     hide ahyun
-    show black
+    stop music
 
     "내일은 몇 시에 탈 거냐고 묻기도 전에, 아현은 그렇게 사람들 틈으로 사라져버렸다."
-
+    scene black fadein 1.0
     ######### 다음날임을 알리는 표시 필요##########
 
 label scene3:
+    "{size=+10}3장{/size}"
+
+    "{size=+10}- 아주, 우연히 -{/size}"
+
+    play music happy loop
     "문 밖을 나서자 찬 공기가 순식간에 양 뺨을 쓸어내렸다."
 
     "극단은 서로 통한다고, 불에 데인 듯 볼이 얼얼했다."
@@ -778,7 +800,7 @@ label scene3end:
 
     gn "오, 그렇게 생각하니 신기하네."
 
-    show ahyun smile
+    show ahyun fun
 
     "아현은 깨달음을 얻은 것이 자랑스러운지 또 다시 배시시 웃었다."
 
@@ -809,7 +831,8 @@ label scene3end:
 
     "내 제안에 아현은 한숨을 푹 쉬더니 창문에 머리를 기댔다."
 
-    play music smile
+    play music smile loop fadeout 1.0 fadein 1.0
+
     gn "부모님 눈치 보여서....... 주말 내내 집에만 있었어."
 
     "워낙 풀죽은 목소리인 탓에, 이쪽에서도 무슨 말을 건네야 할지 몰랐다."
@@ -824,8 +847,6 @@ label scene3end:
 
     me "와......."
 
-    hide ahyun
-
     "곧바로 재수를 준비하는, 그것도 타의로 시작하게 된 아이들은 어떤 기분일까?"
 
     "3년만 참으면 얼마든 놀 수 있다는 말을 들으며 참아온 수험 생활이었을 것이다."
@@ -835,8 +856,6 @@ label scene3end:
     "누군가는 패배해야만 하는 수능이 오늘따라 유독 잔인하게 느껴진다."
 
     "아현은 손으로 얼굴을 감싼 채 등받이에 온 몸을 기댔다."
-
-    show ahyun soso
 
     gn "고삼을 1년이나 더 하라니. 이걸 어떻게 버텼는데......."
 
@@ -856,7 +875,7 @@ label scene3end:
     gn "아!"
 
     show ahyun dere
-    play music happy
+    play music happy loop
 
     "아픔인지 창피함인지, 그녀는 한동안 고개만 숙이다, 한참 후에야 부끄러움 여전한 얼굴을 들었다."
 
@@ -878,7 +897,7 @@ label scene3end:
 
     me "영광이옵니다. 나으리. 폰 번호 말고, 집 비밀번호는 안 필요하십니까?"
 
-    show ahyun smile
+    show ahyun fun
 
     gn "뭐? 하하하하...."
 
@@ -897,6 +916,7 @@ label scene3end:
     gn "그럼, 안녕. 다음에 봐!"
 
     hide ahyun
+    stop music
 
     "버스에서 내린 아현은 걸음을 옮기지 않고 한동안 이쪽만 바라보았다."
 
@@ -906,10 +926,16 @@ label scene3end:
 
     "떠난 건, 내 쪽이었다."
 
+    scene black
 label scene4:
 
-    show school_day
+    "{size=+10}4장{/size}"
+
+    "{size=+10}- 멀리서도 -{/size}"
+
+    scene school_day
     play music thanks
+
     "수능이 끝난 고삼의 교실은 ‘자유’ 그 자체이다."
 
     "친구끼리 삼삼오오 모여 핸드폰, 노트북 하거나 그저 잡담을 나누는 광경마저 1, 2학년들에게는 머나먼 부러움의 대상이 된다."
@@ -934,7 +960,7 @@ label scene4:
 
     "아현이었다."
 
-    show black
+    scene black
 
     gn "뭐해?"
 
@@ -1009,11 +1035,17 @@ label scene4:
     "아까부터 옆자리에 앉아있던 친구가 불쑥 물었다."
 
     "꺼진 화면이 조그맣게 웃음 지은 내 얼굴을 비추고 있었다."
+    stop music fadeout 1.0
+
 
 label scene5:
 
-    show bus1_day
-    play music happy
+    "{size=+10}5장{/size}"
+
+    "{size=+10}- 나쁘지 않은 오해 -{/size}"
+
+    scene bus1_day
+    play music happy loop
 
     "여고 앞 정류장, 그것도 하교 시간에 홀로 서 있는 남학생은 확실히 이질적이었다."
 
@@ -1041,7 +1073,7 @@ label scene5:
 
     "고개를 돌리려는데, 부드러운 손가락이 볼을 콕하고 눌렀다."
 
-    show ahyun smile
+    show ahyun fun
     "붉은 목도리가 유난히 눈에 띄는, 아현이었다."
 
     me "일찍 왔네?"
@@ -1078,8 +1110,8 @@ label scene5:
 
     gn "응!"
 
-    show road_day
     hide ahyun
+    scene road_day
 
     "영화관은 이미 수능이 끝난 고삼들로 북적이고 있었다."
 
@@ -1209,7 +1241,7 @@ label scene5:
 
     gn "안쓰러움이 얼굴에 가득한데?"
 
-    show ahyun smile
+    show ahyun fun
 
     "아현은 사레들려 허겁지겁 음료만 들이키는 나를 보며 깔깔 웃었다."
 
@@ -1227,7 +1259,7 @@ label scene5:
 
     me "아, 부모님 때문에.......?"
 
-    play music smile
+    play music smile loop
 
     "아현은 말없이 고개를 끄덕였다."
 
@@ -1271,7 +1303,7 @@ label scene5:
 
     "나는 얼굴이 붉어진 채, 한참이나 그녀의 뒷모습을 바라보았다."
 
-    stop music
+    stop music fadeout 1.0
 
     "영화관에 들어온 우리는, 예매한대로 한 칸씩 떨어져 앉았다."
 
@@ -1301,7 +1333,7 @@ label scene5:
 
     me "아, 감사합니다."
 
-    show ahyun smile
+    show ahyun normal
 
     "내가 옆에 앉자, 아현은 대단히 놀란 눈치였다."
 
@@ -1327,9 +1359,16 @@ label scene5:
 
     "함께 앉지 못해 슬픈 눈으로 남자친구를 바라보던 어느 여자친구가 안타까워 자기가 자리를 바꿔주었다고 자랑하는 것도 잊지 않았다."
 
+    scene black
+
 label scene6:
-    show school_night
-    play music thanks
+
+    "{size=+10}6장{/size}"
+
+    "{size=+10}- 하교 버스에서 -{/size}"
+
+    scene school_night
+    play music thanks loop
 
     "학교를 나오니 어느덧 해가 완전히 저물어가고 있었다."
 
@@ -1378,8 +1417,9 @@ label scene6:
     me "아현......."
 
 # 아현의 모습은 이때 등장. 아주 슬픈 얼굴.
+######## 아주 슬픈 얼굴 수정필요 ################
     show ahyun soso
-    play music smile
+    play music smile loop
 
     "금방이라도 울음이 터질 듯한 아현의 표정에 도로 말을 삼켰다."
 
@@ -1646,10 +1686,17 @@ label scene6:
 
     gn "우린 이제 더 이상 만나지 못할 테니까......."
 
+    scene black
+
 label scene7:
 
-    play music finally
-    show bus1_night
+    "{size=+10}7장{/size}"
+
+    "{size=+10}- 너의 의미 -{/size}"
+
+    play music final loop
+
+    scene bus1_night
 
     "우리는 종점에서 내렸다."
 
@@ -1702,7 +1749,7 @@ label scene7:
 
     "답답했던 숨을 한 번에 토해낸 아현은 선명한 입김을 서서히 흘려보냈다."
 
-    show ahuyn normal
+    show ahyun normal
 
     gn "너는, 어디로 갈 거야?"
 
@@ -1780,7 +1827,7 @@ label scene7:
 
     "아현은, 그리고 나는, 무엇으로 마지막을 장식해야할까."
 
-    play music smile fadeout 1.0 fadein 1.0
+    play music smile loop fadeout 1.0 fadein 1.0
 
     "톡."
 
@@ -1840,7 +1887,7 @@ label scene7:
 
     "나는 섣불리 그녀를 정의하지 못했다."
 
-    show black
+    scene black
     hide ahyun
 
     "우리는 선 위에서 만났다."
@@ -1867,7 +1914,7 @@ label scene7:
 
     "언제든 다시 만날 수 있는......."
 
-    show bus1_night
+    scene bus1_night
     show ahyun soso
 
     gn "됐어. 말하지 마."
@@ -1879,10 +1926,17 @@ label scene7:
     "그때까지도 나는 가로등 아래서 벗어나지 못했다."
 
     "그 순간, 비가 내렸다."
+    scene black
+    stop music
 
 label scene8:
 
 # 8화 -비를 긋다- 잠시 비를 피하여 그치기를 기다리다
+    "{size=+10}8장{/size}"
+
+    "{size=+10}- 비를 긋다 -{/size}"
+
+    play music final loop
 
     "톡톡."
 
@@ -1899,6 +1953,8 @@ label scene8:
     "사과를 해야 하나, 해명을 할까?"
 
     "복잡해진 머리 탓에 아현이 완전히 사라지고 나서도 단 한 발자국도 움직일 수 없었다."
+
+    show ahyun normal
 
     me "‘너는 내게 뭐였을까.’"
 
@@ -1920,6 +1976,8 @@ label scene8:
 
     "그녀는 그렇게 시나브로 내게 스며든 것이다."
 
+    hide ahyun
+
     "이제는 내가 그러할 차례였다."
 
     "밧줄을 풀지 않고 칼로 잘랐던 알렉산더처럼, 때로는 과감히 발을 내딛을 필요가 있구나."
@@ -1936,7 +1994,11 @@ label scene8:
 
     "그렇게 나는 조금씩 어둠 속으로 들어갔다."
 
+    scene bus2_night
+
     "조명과 그림자가 몇 번이나 반복되었을까, 그리 멀지 않은 곳에서 땅에 내려앉은 달처럼 홀로 빛나는 정류장이 보였다."
+
+    show ahyun normal fadein 3.0
 
     "그리고 그곳에 아현이 있었다."
 
@@ -1958,6 +2020,7 @@ label scene8:
 
     "수능이 끝났던 그날, 그 정류장에서처럼."
 
+    stop music
     me "아현아."
 
     "그녀의 이름을 부르자 마법처럼 비가 그쳤다."
@@ -1983,6 +2046,8 @@ label scene8:
     "이어 덧붙였다."
 
     me "끝에서의 시작."
+
+    play music hello loop fadein 1.0
 
     "아현이 천천히 고개 돌렸다."
 
@@ -2070,6 +2135,9 @@ label scene8:
 
     "아현은 처음 만난 순간부터, 늘 나를 기다리고 있었다."
 
+    stop music fadeout 1.0
+    scene black
+
     "나는 천천히 아현을 향해 몸을 숙였다."
 
     "그녀의 팔이 부드럽게 목을 감는다."
@@ -2084,9 +2152,16 @@ label scene8:
 
     "그리고 천천히......."
 
+    ""
 # 화면 암전
+    hide ahyun
+
 
 # 밝아지는 화면, 가로등 길 등장, 손을 잡은 두 남녀의 뒷모습.
+
+    scene bus1_night fadein 1.0
+
+    play music smile loop
 
     "우리는 다시 길을 걸었다."
 
@@ -2100,11 +2175,15 @@ label scene8:
 
     "아현은 아무 것도 아니라는 듯 작게 웃으며 잡고 있던 손을 장난스레 흔들었다."
 
+    show ahyun smile
+
     gn "괜찮아. 다 지난 일이야."
 
     gn "음, 학교가 끝나고 집 앞 사거리에서 헤어졌는데, 그 다음날 영영 떠나버렸어."
 
     "하지만 그 미소는 이내 옅어졌다."
+
+    show ahyun normal
 
     gn "당연히 내일 다시 만날 줄 알고 헤어졌는데, 그렇게 보내버리니까 그 애의 마지막이 어떤 모습이었는지 기억이 나지 않더라."
 
@@ -2116,6 +2195,8 @@ label scene8:
 
     "그녀는 잠시 손을 놓더니 나를 먼저 보냈다."
 
+    hide ahyun
+
     "돌아보려 하자 아현은 내 어깨를 붙잡은 채 등에 대고 말했다."
 
     gn "모든 작별이 영원한 안녕을 포함하게 되니까, 그 사람을 조금이라도 오래 보려 하더라."
@@ -2124,11 +2205,15 @@ label scene8:
 
     "나는 아현을 향해 돌아섰다."
 
+    show ahyun normal fadein 1.0
+
     "그리고 가볍게 그녀를 안았다."
 
     "찬 공기 속에서 체온의 따스함이 더욱 절실히 느껴졌다."
 
     me "나는 기다릴게."
+
+    show ahyun dere
 
     "아현이 내 품에 살며시 고개 묻었다."
 
@@ -2162,7 +2247,14 @@ label scene8:
 
     "누구에게나 한번쯤은, 이 세상의 주인공이 되는 순간이 찾아오기 마련이다."
 
+    scene black
+    stop music fadeout 1.0
+
+
 label epilogue:
+
+    "{size=+10}에필로그{/size}"
+    play music smile loop
 
     "아직 해가 완전히 떠오르지도 않았건만, 뜨거운 공기에 벌써부터 땀방울이 맺힌다."
 
@@ -2232,9 +2324,13 @@ label epilogue:
 
     "도저히 견딜 수 없을 것 같다."
 
+    stop music fadeout 1.0
+
     "머리가 아찔한 것이 비단 더위 뿐만은 아닐 터이다."
 
     "그 순간, 어디선가 바람이 불어와 오른쪽 뺨을 부드럽게 쓰다듬었다."
+
+    play music thanks
 
     "미적지근했으나, 버스 안에서는 그마저도 달콤했다."
 
@@ -2327,5 +2423,9 @@ label epilogue:
     "스스로에게 주는 응원이었다."
 
     "이제 세상에 내 편이 한 명 생겼다는 기쁨을 간직한 채, 나는 천천히 길을 걸어갈 수 있었다."
+
+    scene black
+
+    "12월의 봄"
 
     return

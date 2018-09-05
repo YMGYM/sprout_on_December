@@ -1,44 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 658, in script
-    me "백아현?"
-IOError: Couldn't find file 'music/happy.mp3'.
+  File "game/script.rpy", line 1697, in script
+    play music finally loop
+  File "renpy/common/000statements.rpy", line 110, in execute_play_music
+    renpy.music.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 32, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+SyntaxError: unexpected EOF while parsing (script.rpy, line 1697)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 658, in script
-    me "백아현?"
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/ast.py", line 643, in execute
-    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/exports.py", line 1176, in say
-    who(what, *args, **kwargs)
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/character.py", line 1013, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/character.py", line 817, in do_display
-    **display_args)
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/character.py", line 566, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/ui.py", line 287, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/display/core.py", line 2624, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/display/core.py", line 3284, in interact_core
-    renpy.audio.audio.periodic()
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/audio/audio.py", line 976, in periodic_thread_main
-    periodic_pass()
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/audio/audio.py", line 920, in periodic_pass
-    c.periodic()
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/audio/audio.py", line 409, in periodic
-    topf = load(self.file_prefix + filename + self.file_suffix)
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/audio/audio.py", line 69, in load
-    rv = renpy.loader.load(fn)
-  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/loader.py", line 555, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'music/happy.mp3'.
+  File "game/script.rpy", line 1697, in script
+    play music finally loop
+  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/ast.py", line 1801, in execute
+    self.call("execute")
+  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/ast.py", line 1789, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/statements.py", line 169, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 110, in execute_play_music
+    renpy.music.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 32, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/python.py", line 1841, in py_eval
+    code = py_compile(code, 'eval')
+  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/python.py", line 638, in py_compile
+    raise e
+SyntaxError: unexpected EOF while parsing (script.rpy, line 1697)
 
 Darwin-18.0.0-x86_64-i386-64bit
 Ren'Py 6.99.14.1.3218
 12월의 새싹 1.0
-Thu Aug 30 22:10:47 2018
+Wed Sep  5 13:18:31 2018

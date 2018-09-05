@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 660: end of line expected.
-    show bus2_day with ahyun normal
-                             ^
+File "game/script.rpy", line 2023: expected statement.
+    music stop
+              ^
 
 Ren'Py Version: Ren'Py 6.99.14.1.3218
-Thu Aug 30 21:29:57 2018
+Wed Sep  5 13:26:25 2018
