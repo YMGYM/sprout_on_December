@@ -12,6 +12,8 @@ image ahyun smile = "ahyun/smile.png"
 image ahyun dere = "ahyun/dere.png"
 image ahyun normal = "ahyun/normal.png"
 image ahyun soso = "ahyun/soso.png"
+image ahyun crying = "ahyun/cry.png"
+image ahyun fun = "ahyun/fun.png"
 
 
 # 배경 설정
@@ -23,6 +25,9 @@ image bg bus1_night = "bus1_night.jpeg"
 image bg bus2_day = "bus2_day.jpeg"
 image bg bus2_night = "bus2_night.jpeg"
 image bg road_day = "road_day.jpeg"
+image bg busin = "busin.jpg"
+image bg movie = "movie.jpg"
+image bg sushi = "sushi.jpeg"
 # show ahyun smile
 # show school_day behind ahyun 와 같이 사용합니다.
 
@@ -169,7 +174,7 @@ label scene1:
     "옆에 앉은 여자애였다."
 
 # 대각선 구도(내가 앞, 소녀는 뒤)
-    ############ 고개숙인 소녀 수정필요##############
+
     show ahyun crying
 
     "들키고 싶지 않았는지, 붉은 목도리에 얼굴을 파묻고 있다."
@@ -349,6 +354,8 @@ label scene1end:
 
     "그녀와 나는 다시 입을 닫은 채 별의 바다에서 헤엄치는 비행기를 바라보았다."
 
+    scene busin
+
     "뒤늦게 정류장에 도착한 버스는 이미 사람들로 가득했다."
 
     "그녀와 나는 약속이라도 한 듯 나란히 섰다."
@@ -418,7 +425,7 @@ label scene2:
 
     "{size=+10}- 아침 버스에서 -{/size}"
 
-    scene bus2_day
+    scene busin
     play music happy loop
 
     "아침의 버스는 모순적이다."
@@ -505,6 +512,7 @@ label scene2:
 
     "한바탕 웃음이 지나가서야 우리는 훨씬 풀어진 분위기 안에서 가볍게 인사를 나누었다."
 
+    show ahyun smile
     me "안녕."
 
     g "안녕."
@@ -752,6 +760,8 @@ label hotpack:
 label scene3end:
     hide ahyun
 
+    scene busin
+
     "얼마 지나지 않아 버스가 왔다."
 
     gn "두 명이요."
@@ -847,6 +857,8 @@ label scene3end:
 
     me "와......."
 
+    scene black
+
     "곧바로 재수를 준비하는, 그것도 타의로 시작하게 된 아이들은 어떤 기분일까?"
 
     "3년만 참으면 얼마든 놀 수 있다는 말을 들으며 참아온 수험 생활이었을 것이다."
@@ -867,6 +879,8 @@ label scene3end:
 
     hide ahyun
     stop music
+
+    scene busin
 
     me ".......!"
 
@@ -1156,6 +1170,7 @@ label scene5:
     "서운한 표정의 아현을 뒤로 한 채, 결국 한 칸 떨어져서 앉기로 했다."
 
     hide ahyun
+    scene sushi
 
     "그 뒤에 시간의 영화를 보면 너무 늦게 끝날 것 같았다."
 
@@ -1176,6 +1191,8 @@ label scene5:
     gn "원래 난 조금씩 많이 먹는 성격이거든."
 
     gn "그리고 첫 시작은 무조건 이걸로!"
+
+    show ahyun dere
 
     "아현은 계란초밥 하나를 집어 가볍게 입에 넣고는 행복하단 표정으로 동동 발을 굴렀다."
 
@@ -1304,6 +1321,7 @@ label scene5:
     "나는 얼굴이 붉어진 채, 한참이나 그녀의 뒷모습을 바라보았다."
 
     stop music fadeout 1.0
+    scene movie
 
     "영화관에 들어온 우리는, 예매한대로 한 칸씩 떨어져 앉았다."
 
@@ -1394,6 +1412,8 @@ label scene6:
 
     "그 짧은 사이에 잠에 든 것이었다."
 
+    scene busin
+
     "번호를 확인하고는 주머니에서 교통카드를 꺼내 버스에 올라탔다."
 
     "버스 안은, 사람이 많은 건 아니었지만 남은 좌석은 출입문 바로 앞자리뿐이었다."
@@ -1417,8 +1437,8 @@ label scene6:
     me "아현......."
 
 # 아현의 모습은 이때 등장. 아주 슬픈 얼굴.
-######## 아주 슬픈 얼굴 수정필요 ################
-    show ahyun soso
+
+    show ahyun crying
     play music smile loop
 
     "금방이라도 울음이 터질 듯한 아현의 표정에 도로 말을 삼켰다."
@@ -1663,6 +1683,8 @@ label scene6:
 
     hide ahyun
     stop music
+    scene black
+
 
     "순식간에 아현이 몸을 밀었다."
 
@@ -1686,7 +1708,7 @@ label scene6:
 
     gn "우린 이제 더 이상 만나지 못할 테니까......."
 
-    scene black
+    # scene black
 
 label scene7:
 
@@ -1845,6 +1867,8 @@ label scene7:
 
 
     ########## 우는 아현 #############
+    show ahyun crying
+
     "아현은 울고 있었다."
 
     "다만, 들키지 않으려 앞만 보고 있을 뿐이다."
@@ -1998,7 +2022,7 @@ label scene8:
 
     "조명과 그림자가 몇 번이나 반복되었을까, 그리 멀지 않은 곳에서 땅에 내려앉은 달처럼 홀로 빛나는 정류장이 보였다."
 
-    show ahyun normal fadein 3.0
+    show ahyun crying fadein 10.0
 
     "그리고 그곳에 아현이 있었다."
 
@@ -2050,6 +2074,8 @@ label scene8:
     play music hello loop fadein 1.0
 
     "아현이 천천히 고개 돌렸다."
+
+    show ahyun soso fadein 3.0
 
     "우리는 다시 마주했다."
 
@@ -2135,6 +2161,8 @@ label scene8:
 
     "아현은 처음 만난 순간부터, 늘 나를 기다리고 있었다."
 
+    hide ahyun
+
     stop music fadeout 1.0
     scene black
 
@@ -2153,8 +2181,6 @@ label scene8:
     "그리고 천천히......."
 
     ""
-# 화면 암전
-    hide ahyun
 
 
 # 밝아지는 화면, 가로등 길 등장, 손을 잡은 두 남녀의 뒷모습.
@@ -2231,6 +2257,8 @@ label scene8:
 
     "목적지에 도착하려면 아무래도 꽤 오랜 시간이 걸릴 듯하다."
 
+    show ahyun smile
+
     me "우리 둘 다, 아직은 걸어갈 길이 많이 남은 것 같아."
 
     gn "이제 스무 살이니까."
@@ -2246,6 +2274,8 @@ label scene8:
     "우리는 잡은 손을 놓지 않은 채, 함께 발맞추어 가로등의 길을 걸어갔다."
 
     "누구에게나 한번쯤은, 이 세상의 주인공이 되는 순간이 찾아오기 마련이다."
+
+    hide ahyun
 
     scene black
     stop music fadeout 1.0

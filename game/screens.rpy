@@ -313,6 +313,8 @@ screen navigation():
 
         textbutton _("환경 설정") action ShowMenu("preferences")
 
+        textbutton _("만든 사람들") action ShowMenu("credit")
+
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
@@ -342,6 +344,26 @@ style navigation_button:
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
 
+
+##### credit
+screen credit():
+
+    tag menu
+
+    ## This use statement includes the game_menu screen inside this one. The
+    ## vbox child is then included inside the viewport inside the game_menu
+    ## screen.
+    use game_menu(_("만든 사람들"), scroll="viewport"):
+
+        style_prefix "about"
+
+        vbox:
+
+            text _("Team 잉여들\n 저희 팀은 고등학교 동창생들로 이루어진 팀입니다. \n 각자 다른 재능을 가지고 있었지만, 군대와 사회생활로 흩어지기 전에 무언가 하나 남기자 라는 의견에 모두 동의한 결과, 21살이 된, 2018년 겨울을 시작으로 이 게임을 제작했습니다.")
+
+            text _("github : https://github.com/YMGYM/sprout_on_December")
+            text _("\n 기획 : YMGYM\n 시나리오 : 티끝\n 캐릭터 : 군대간 김씨\n 사운드 : 제이디\n 개발 : drone8449\n 배경 및 제작지원 : DJ. HAND")
+            
 
 ## Main Menu screen ############################################################
 ##
