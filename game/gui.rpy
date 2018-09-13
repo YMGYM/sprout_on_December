@@ -67,7 +67,7 @@ define gui.interface_text_font = "NanumGothic.ttf"
 define gui.text_size = 22
 
 ## The size of character names.
-define gui.name_text_size = 30
+define gui.name_text_size = 35
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 22
@@ -430,8 +430,9 @@ init python:
 
         ## Adjust the location of the textbox.
         gui.textbox_height = 240
-        gui.name_xpos = 80
-        gui.text_xpos = 90
+        gui.name_xpos = 70
+        gui.name_ypos = 40
+        gui.text_xpos = 100
         gui.text_width = 1100
 
         ## Change the size and spacing of various things.

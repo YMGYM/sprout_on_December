@@ -4,8 +4,8 @@
 # 캐릭터 정의
 define me = Character('나', color="#c8ffc8")
 define b = Character('남자아이', color="#c8ffc8")
-define g = Character('소녀', color="#bc2424")
-define gn = Character('아현', color="#bc2424")
+define g = Character('소녀', color="#eeccdd")
+define gn = Character('아현', color="#eeccdd")
 
 # 캐릭터 설정
 image ahyun smile = "ahyun/smile.png"
@@ -28,6 +28,7 @@ image bg road_day = "road_day.jpeg"
 image bg busin = "busin.jpg"
 image bg movie = "movie.jpg"
 image bg sushi = "sushi.jpeg"
+image bg busin_day = "busin_day.jpg"
 # show ahyun smile
 # show school_day behind ahyun 와 같이 사용합니다.
 
@@ -167,13 +168,10 @@ label scene1:
 
     "간만의 감상은 오래 가지 못했다."
 
-# 훌쩍이는 소리
 
     "저녁 공기 사이로 작은 울음이 들려온 것이다."
 
     "옆에 앉은 여자애였다."
-
-# 대각선 구도(내가 앞, 소녀는 뒤)
 
     show ahyun crying
 
@@ -374,7 +372,7 @@ label scene1end:
 
     "그렇게 생각하니 도로 위를 달리는 차들은 반딧불이 같이 여겨졌다."
 
-    g "나는 여기서 내려야 돼."
+    g "나.. 여기서 내릴게.."
 
     "그녀가 하차벨을 누르며 말했다."
 
@@ -392,7 +390,7 @@ label scene1end:
 
     me "안녕. 잘 가"
 
-    g "그래, 안녕. 오늘 고마웠어"
+    g "응... 오늘 고마웠어"
 
     hide ahyun
 
@@ -418,6 +416,7 @@ label scene1end:
 
     "다시 만날 수 있을까?"
 
+    stop music fadeout 2.0
     scene black
 label scene2:
 
@@ -425,7 +424,7 @@ label scene2:
 
     "{size=+10}- 아침 버스에서 -{/size}"
 
-    scene busin
+    scene busin_day
     play music happy loop
 
     "아침의 버스는 모순적이다."
@@ -536,7 +535,6 @@ label scene2:
     g "창문에 기대서 조는 모습 몇 번 본 적 있어."
 
     show ahyun normal
-    #입 안벌리고 웃는 표정으로 수정 예정
 
     g "너, **고등학교 다니지?"
 
@@ -584,7 +582,7 @@ label scene2:
 
     gn "게슴츠레 뜬 눈으로 계속 유리창에 머리 박던 거를."
 
-    gn "우리가 친했으면 사진 찍어서 평생 놀 리는 거였는데."
+    gn "우리가 친했으면 사진 찍어서 평생 놀리는 거였는데."
 
     "왜인지 그 모습이 상상돼 얼굴이 화끈거렸다."
 
@@ -660,10 +658,10 @@ label scene2:
     gn "난 여기서 내릴게. 내일 보자!"
 
     hide ahyun
-    stop music
+    stop music fadeout 3.0
 
     "내일은 몇 시에 탈 거냐고 묻기도 전에, 아현은 그렇게 사람들 틈으로 사라져버렸다."
-    scene black fadein 1.0
+    scene black
     ######### 다음날임을 알리는 표시 필요##########
 
 label scene3:
@@ -760,7 +758,7 @@ label hotpack:
 label scene3end:
     hide ahyun
 
-    scene busin
+    scene busin_day
 
     "얼마 지나지 않아 버스가 왔다."
 
@@ -831,7 +829,7 @@ label scene3end:
 
     gn "영화 뭐 봤는데?"
 
-    me "요상한 동물사전. 저번 주에 개봉했더라고."
+    me "닥터 스트레인지. 저번 주에 개봉했더라고."
 
     gn "와, 나 그거 너무 보고 싶었는데!"
 
@@ -899,9 +897,9 @@ label scene3end:
 
     "얼떨결에 핸드폰을 받은 나는 능글맞은 목소리로 말했다."
 
-    show ahyun normal
-
     me "오, 내가 여자한테 번호를 따일 줄이야."
+
+    show ahyun smile
 
     gn "뭐.. 뭐래......."
 
@@ -930,7 +928,7 @@ label scene3end:
     gn "그럼, 안녕. 다음에 봐!"
 
     hide ahyun
-    stop music
+    stop music fadeout 5.0
 
     "버스에서 내린 아현은 걸음을 옮기지 않고 한동안 이쪽만 바라보았다."
 
@@ -980,9 +978,11 @@ label scene4:
 
     "누군가 내게 관심 갖고 궁금해 한다는 건, 기분 좋은 일이다."
 
-    me "그냥 폰 만지고 있어 ᄏᄏ"
+    me "그냥 폰 만지고 있어"
 
-    gn "나도ᄏᄏᄏ 학교가 안 끝나ᅲᅲ"
+    gn "나도... 학교가 안 끝나"
+
+    gn "넘나 슬픈 것..."
 
     me "넌 몇 시까지 있어야 돼?"
 
@@ -990,23 +990,23 @@ label scene4:
 
     gn "넌?"
 
-    me "나도 그때쯤ᅲᅲ 4시 15분"
+    me "나도 그때쯤, 4시 15분"
 
-    gn "수능도 끝났는데 일찍 좀 보내주지........ᅲᅲ 작년엔 점심만 먹고 갔다는데..."
+    gn "수능도 끝났는데 일찍 좀 보내주지........ 작년엔 점심만 먹고 갔다는데..."
 
-    me "그러니까ᄏᄏᄏᄏ 학교 끝나고 뭐할 거야?"
+    me "그러니까, 학교 끝나고 뭐할 거야?"
 
     gn "딱히 계획 없는데"
 
     gn "너는?"
 
-    me "나도ᄏᄏ 맨날 피방 가고 노래방 가는 것도 지겨워"
+    me "나도 딱히... 맨날 피방 가고 노래방 가는 것도 지겨워"
 
     gn "근데 막상 가면 잘 놀지?"
 
-    me "ᄏᄏᄏᄏᄏᄏᄏᄏᄏᄏᄏᄏᄏ"
+    me "앗"
 
-    gn "ᄏᄏᄏᄏᄏᄏᄏᄏᄏᄏᄏᄏᄏᄏᄏ"
+    gn "딱 걸렸지?"
 
     "한동안 톡방은 침묵이었다."
 
@@ -1024,19 +1024,19 @@ label scene4:
 
     gn "아직 정하진 않았는데"
 
-    gn "원래는 동물사전 보려고 했거든"
+    gn "원래는 닥터 스트레인지 보려고 했거든"
 
     gn "근데 너 그거 봤다고 하니까 다른 거 봐도 돼!"
 
-    me "아냐ᄏᄏ 너 그거 보고 싶다고 했으니까 그거 보자"
+    me "아냐 너 그거 보고 싶다고 했으니까 그거 보자"
 
-    gn "아냐ᅲᅲ 괜찮아 넌 뭐 보고 싶어?"
+    gn "아냐 괜찮아 넌 뭐 보고 싶어?"
 
     me "음.. 난 그거 너무 재밌게 봐서 두 번 보고 싶기도 해!"
 
     gn "정말? 그럼 진짜 그거 봐도 돼?"
 
-    me "응응ᄒᄒᄒ"
+    me "응응"
 
     gn "그럼 이따가 8시 10분 거 볼래? 그 전에 저녁 먹고!"
 
@@ -1049,7 +1049,7 @@ label scene4:
     "아까부터 옆자리에 앉아있던 친구가 불쑥 물었다."
 
     "꺼진 화면이 조그맣게 웃음 지은 내 얼굴을 비추고 있었다."
-    stop music fadeout 1.0
+    stop music fadeout 3.0
 
 
 label scene5:
@@ -1276,7 +1276,7 @@ label scene5:
 
     me "아, 부모님 때문에.......?"
 
-    play music smile loop
+    play music smile loop fadeout 1.0 fadein 1.0
 
     "아현은 말없이 고개를 끄덕였다."
 
@@ -1320,7 +1320,7 @@ label scene5:
 
     "나는 얼굴이 붉어진 채, 한참이나 그녀의 뒷모습을 바라보았다."
 
-    stop music fadeout 1.0
+    stop music fadeout 3.0
     scene movie
 
     "영화관에 들어온 우리는, 예매한대로 한 칸씩 떨어져 앉았다."
@@ -1435,8 +1435,6 @@ label scene6:
     "이제는 익숙한, 아현의 기척이었다."
 
     me "아현......."
-
-# 아현의 모습은 이때 등장. 아주 슬픈 얼굴.
 
     show ahyun crying
     play music smile loop
@@ -1708,8 +1706,6 @@ label scene6:
 
     gn "우린 이제 더 이상 만나지 못할 테니까......."
 
-    # scene black
-
 label scene7:
 
     "{size=+10}7장{/size}"
@@ -1951,7 +1947,7 @@ label scene7:
 
     "그 순간, 비가 내렸다."
     scene black
-    stop music
+    stop music fadeout 3.0
 
 label scene8:
 
@@ -2022,7 +2018,7 @@ label scene8:
 
     "조명과 그림자가 몇 번이나 반복되었을까, 그리 멀지 않은 곳에서 땅에 내려앉은 달처럼 홀로 빛나는 정류장이 보였다."
 
-    show ahyun crying fadein 10.0
+    show ahyun crying fadein 3.0
 
     "그리고 그곳에 아현이 있었다."
 
@@ -2075,7 +2071,7 @@ label scene8:
 
     "아현이 천천히 고개 돌렸다."
 
-    show ahyun soso fadein 3.0
+    show ahyun normal fadein 3.0
 
     "우리는 다시 마주했다."
 
@@ -2163,7 +2159,7 @@ label scene8:
 
     hide ahyun
 
-    stop music fadeout 1.0
+    stop music fadeout 3.0
     scene black
 
     "나는 천천히 아현을 향해 몸을 숙였다."
@@ -2263,6 +2259,8 @@ label scene8:
 
     gn "이제 스무 살이니까."
 
+    stop music fadeout 5.0
+
     "뒤를 돌아보니 저 멀리 도시의 빛이 동 트듯 하늘을 밝히고 있었다."
 
     "잘게 부서져 흐릿해지는 조명이, 오히려 한데 뒤섞여 한지에 찍힌 한 점 먹처럼 번지고 있다."
@@ -2278,7 +2276,6 @@ label scene8:
     hide ahyun
 
     scene black
-    stop music fadeout 1.0
 
 
 label epilogue:

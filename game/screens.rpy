@@ -363,7 +363,7 @@ screen credit():
 
             text _("github : https://github.com/YMGYM/sprout_on_December")
             text _("\n 기획 : YMGYM\n 시나리오 : 티끝\n 캐릭터 : 군대간 김씨\n 사운드 : 제이디\n 개발 : drone8449\n 배경 및 제작지원 : DJ. HAND")
-            
+
 
 ## Main Menu screen ############################################################
 ##
@@ -1444,9 +1444,9 @@ screen quick_menu():
         xalign 0.5
         yalign 1.0
 
-        textbutton _("뒤로") action Rollback()
+        textbutton _("히스토리") action ShowMenu("history")
         textbutton _("스킵") action Skip() alternate Skip(fast=True, confirm=True)
-        textbutton _("자동저장") action Preference("auto-forward", "toggle")
+        textbutton _("자동진행") action Preference("auto-forward", "toggle")
         textbutton _("Menu") action ShowMenu()
 
 
