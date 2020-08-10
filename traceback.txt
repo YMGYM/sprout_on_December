@@ -1,0 +1,36 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 1697, in script
+    play music finally loop
+  File "renpy/common/000statements.rpy", line 110, in execute_play_music
+    renpy.music.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 32, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+SyntaxError: unexpected EOF while parsing (script.rpy, line 1697)
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 1697, in script
+    play music finally loop
+  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/ast.py", line 1801, in execute
+    self.call("execute")
+  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/ast.py", line 1789, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/statements.py", line 169, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 110, in execute_play_music
+    renpy.music.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 32, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/python.py", line 1841, in py_eval
+    code = py_compile(code, 'eval')
+  File "/Users/Anminjun/renpy-6.99.14.1-sdk/renpy/python.py", line 638, in py_compile
+    raise e
+SyntaxError: unexpected EOF while parsing (script.rpy, line 1697)
+
+Darwin-18.0.0-x86_64-i386-64bit
+Ren'Py 6.99.14.1.3218
+12월의 새싹 1.0
+Wed Sep  5 13:18:31 2018
